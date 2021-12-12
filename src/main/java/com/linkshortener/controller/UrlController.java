@@ -22,13 +22,13 @@ public class UrlController {
         this.urlService = urlService;
     }
 
-    @GetMapping(path = "/")
+    @GetMapping(path = "/api/v1/")
     public ResponseEntity head() {
         //to do
         return new ResponseEntity("this URL with GET-requests is not supported. Use POST-requests, please", HttpStatus.OK);
     }
 
-    @PostMapping(path = "/")
+    @PostMapping(path = "/api/v1/")
     public ResponseEntity createShortUrl(String url) {
         if(!UrlUtils.isURL(url)){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -39,7 +39,7 @@ public class UrlController {
         return new ResponseEntity(shortUrl, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/{shortUrl}")
+    @GetMapping(path = "/api/v1/{shortUrl}")
     public ResponseEntity redirectShorter(@PathVariable("shortUrl") String shortUrl) {
         String url = urlService.findByShortUrl(shortUrl);
         if(url == null){

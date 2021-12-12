@@ -1,5 +1,9 @@
 # test-anc
 
+REST-API for shortening links.
+
+For building and running the application you need:
+
 - [JDK 11](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
 - [Maven 4](https://maven.apache.org)
 
@@ -12,7 +16,7 @@ In order to run this application on your local machine, you just need to execute
 
 In order to use the application in postman you need:
 
-* Run application in 
+* Run application in IDEA
 * Add header for simple authorization. For example: 
 ```shell
 Authorization : Basic dXNlcjpyb290
